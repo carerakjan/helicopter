@@ -1,0 +1,44 @@
+{
+    "frontLimit": 0.37,
+    "rearLimit": -0.080,
+    "helicopter": {"weight": 7742, "distance": 0.004649, "moment": 35.99},
+    "load": [
+        {"type":"Летчики с парашютами", "weight": 180, "moment": 757.8},
+        {"type":"БТ с парашютом", "weight": 90, "moment": 324},
+        {"type":"Оператор СБИ с парашютом", "weight": 75, "moment": 121.875},
+        {"type":"Бортовой видео оператор", "weight": 80, "moment": 16.8},
+        {"type":"Входной трап", "weight": 8, "moment": 24},
+        {"type":"Адаптер М-1", "weight": 78, "moment": -171.6},
+        {"type":"Масло", "weight": 70, "moment": 73.99},
+        {"type":"Топливо в расходном баке", "weight": 346, "moment": -456.72},
+        {"type":"Топливо - левый подвесной бак", "weight": 578, "moment": 127.738},
+        {"type":"Топливо - правый подвесной бак", "weight": 526, "moment": 115.72},
+        {"type":"Грузовые створки", "weight": -83, "moment": 273.9}
+    ],
+    "paratroopers": [
+        {"row": 0, "weight": 77, "type": "releaser"},
+        {"row": 1, "weight": 199.8},
+        {"row": 2, "weight": 192.6},
+        {"row": 3, "weight": 185.6},
+        {"row": 4, "weight": 228.6},
+        {"row": 5, "weight": 196.6},
+        {"row": 6, "weight": 203.6},
+        {"row": 7, "weight": 207.6},
+        {"row": 8, "weight": 253.6},
+        {"row": 9, "weight": 0, "type": "releaser"},
+        {"row": 10, "weight": 0, "type": "rope"}
+    ],
+    "rows": [
+        {"id": 0, "type": "9 шеренга Д (1шп)", "distance": 3.2},
+        {"id": 1, "type": "8 шеренга Д (2-3шп)", "distance": 2.5},
+        {"id": 2, "type": "7 шеренга Д (3шп)", "distance": 2},
+        {"id": 3, "type": "6 шеренга Д (4шп)", "distance": 1.35},
+        {"id": 4, "type": "5 шеренга Д (5-6шп)", "distance": 0.565},
+        {"id": 5, "type": "4 шеренга Д (7шп)", "distance": 0.15},
+        {"id": 6, "type": "3 шеренга Д (8шп)", "distance": -0.25},
+        {"id": 7, "type": "2 шеренга Д (10-11шп)", "distance": -0.6},
+        {"id": 8, "type": "1 шеренга Д (12шп)", "distance": -0.9},
+        {"id": 9, "type": "0 шеренга Д (12-13шп)", "distance": -1.6},
+        {"id": 10, "type": "Десантники на СДК", "distance": -2.2}
+    ]
+}
