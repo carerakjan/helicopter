@@ -120,7 +120,7 @@ class Crew(Frame):
                 if reversed_btns[i] == curr_btn:
                     # print('>>>', i, reversed_seq)
                     if i < len(reversed_seq):
-                        weight = reversed_seq[i]
+                        weight = reversed_seq[i].weight
                     else:
                         weight = 0
 
@@ -135,19 +135,19 @@ class Crew(Frame):
                 if reversed_btns[i] == curr_btn:
                     # print('>>>', i, reversed_seq)
                     if i < len(reversed_seq):
-                        weight = reversed_seq[i]
+                        weight = reversed_seq[i].weight
                     else:
                         weight = 0
 
         if btn_type == 'left_rope':
             title = 'Левый канат'
             dist = float(self.left_rope_btns[0]['text'])
-            weight = sum(list(self.left_trooper_sequence[1]))
+            weight = sum([l.weight for l in list(self.left_trooper_sequence[1])])
 
         if btn_type == 'right_rope':
             title = 'Правый канат'
             dist = float(self.right_rope_btns[0]['text'])
-            weight = sum(list(self.right_trooper_sequence[1]))
+            weight = sum([l.weight for l in list(self.right_trooper_sequence[1])])
 
         message = (
                 f'- Масса: {weight} кг',
