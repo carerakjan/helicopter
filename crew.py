@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from state import State
 from PIL import Image, ImageTk
+from load import Load
 import api
 
 
@@ -37,8 +38,8 @@ class Crew(Frame):
         self.left_trooper_sequence = left_col = api.create_queues()
         self.right_trooper_sequence = right_col = api.create_queues()
         for t in api.get_troopers(self.app_config):
-            left_col[0].append(t['weight']/2)
-            right_col[0].append(t['weight']/2)
+            left_col[0].append(Load(weight=t['weight']/2))
+            right_col[0].append(Load(weight=t['weight']/2))
 
     def update_troopers_btns_state(self, sequence, buttons):
         btns = buttons[::-1]
@@ -167,7 +168,7 @@ class Crew(Frame):
         def calc_tr_sequences(btns, sequence):
             nonlocal total_weight, total_moment
             dists = [float(b['text']) for b in btns][::-1]
-            weights = list(sequence[0])[::-1]
+            weights = [l.weight for l in list(sequence[0])[::-1]]
             zipped_data = [(a,b) for a,b in zip(dists, weights)]
             total_weight += sum([w for d, w in zipped_data])
             total_moment += sum(api.calc_moment(w, d) for d, w in zipped_data)
@@ -175,7 +176,7 @@ class Crew(Frame):
         calc_tr_sequences(self.left_trooper_btns, self.left_trooper_sequence)
         calc_tr_sequences(self.right_troopers_btns, self.right_trooper_sequence)
         
-        rope_weights = list(self.left_trooper_sequence[1]) + list(self.right_trooper_sequence[1])
+        rope_weights = [l.weight for l in list(self.left_trooper_sequence[1]) + list(self.right_trooper_sequence[1])]
         rope_dists = [float(self.left_rope_btns[0]['text'])] * len(rope_weights)
         # print('----------')
         # print('>> rope l:', len(rope_weights))

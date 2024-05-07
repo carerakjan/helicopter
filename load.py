@@ -15,3 +15,6 @@ class Load:
 
     def calc_weight(self):
         self.weight = round(self.moment / self.distance, 3)
+
+    def __eq__(self, value: object) -> bool:
+        return id(self) == id(value)
